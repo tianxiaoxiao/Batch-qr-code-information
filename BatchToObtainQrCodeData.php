@@ -23,11 +23,11 @@
 		$qrcode = $qrcode_obj->ldentify('./qrcode/'.$file_name[$begin]);
 
 		$column_name_A = "A".$key;                                           //组合列名
-        $column_name_B = "B".$key;
+                $column_name_B = "B".$key;
 
 		$objSheet->setCellValue($column_name_A,$file_name[$begin])->setCellValue($column_name_B,$qrcode);   //利用setCellValues()填充数据
-        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');   //设定写入excel的类型
-        $objWriter->save('./demo.xlsx');                                           //保存文件
+                $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');   //设定写入excel的类型
+                $objWriter->save('./demo.xlsx');                                           //保存文件
 		echo $column_name_A."\n";
 	}
 	
@@ -45,9 +45,9 @@
 	//类名： 识别二维码类
 	class  IdentifyQrCode{
 		public function ldentify($image_name){
-            $image = new ZBarCodeImage($image_name);         //新建一个图像对象
-            $scanner = new ZBarCodeScanner();                // 创建一个二维码识别器
-            $barcode = $scanner->scan($image);               //识别图像
+                $image = new ZBarCodeImage($image_name);         //新建一个图像对象
+                $scanner = new ZBarCodeScanner();                // 创建一个二维码识别器
+                $barcode = $scanner->scan($image);               //识别图像
 		    if (!empty($barcode)) {                          //循环输出二维码信息
 		        foreach ($barcode as $code) {
 		        	return $code['data'];
