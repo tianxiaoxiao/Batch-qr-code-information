@@ -8,8 +8,8 @@
     // +----------------------------------------------------------------------
 	require './Classes/PHPExcel.php';                   //添加读取excel表格类
 	$objPHPExcel = new PHPExcel();                      //实例化一个PHPExcel()对象
-    $objSheet = $objPHPExcel->getActiveSheet();         //选取当前的sheet对象
-    $objSheet->setTitle('helen');                       //对当前sheet对象命名
+        $objSheet = $objPHPExcel->getActiveSheet();         //选取当前的sheet对象
+        $objSheet->setTitle('helen');                       //对当前sheet对象命名
 
 	$file_obj = new AccessFile();                       //实例化二维码图片文件路径类
 
